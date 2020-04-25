@@ -1,0 +1,109 @@
+                          ==================
+                            zhmCJK Package
+                          ==================
+
+Introduction
+------------
+
+zhmCJK is a package written to ease the complex CJK fonts setup.  All CJK
+fonts may share the same .tfm metrics.  The package sets the NFSS font
+definition and actual font maappings using TeX macros dynamically.  As a
+result, zhmCJK provides similar faculties and interface of xeCJK, TrueType CJK
+fonts are used to generate PDF output with pdfTeX or DVIPDFMx driver.
+
+This package is licensed under LPPL.
+
+Installation
+------------
+
+This package consists of the files zhmCJK.dtx,
+                                zhmCJK.ins,
+                                zhmCJK.lua,
+                                zhmCJK-addmap.pl,
+          and the derived files zhmCJK.sty,
+                                zhmCJK.pdf,
+                                zhmCJK-test.tex,
+                                README,                     (from zhmCJK.dtx)
+                                zhmCJK.map,
+                                texfonts.map.template,
+                                zhmCJK.tfm,
+                                miktex-tfm/zhm*/zhm**.tfm.  (from zhmCJK.lua)
+
+* Compile zhmCJK.lua with command
+
+      texlua zhmCJK.lua map
+
+  to generate zhmCJK.map, texfonts.map.template, zhmCJK.tfm.
+
+  Or, for MiKTeX only, use
+
+      texlua zhmCJK.lua nomap
+
+  to generate miktex-tfm/zhm*/zhm**.tfm. (32 subdirectories, 8192 TFM files)
+
+* Compile zhmCJK.ins using an 8-bit TeX engine to obtain zhmCJK.sty,
+  zhmCJK-test.tex and this README file.
+
+* Compile zhmCJK.dtx using pdflatex or latex+dvipdfmx to obtain the
+  documentation zhmCJK.pdf.
+
+* Copy the files into proper directories searched by TeX.
+  TDS tree:
+
+    TEXMF/doc/latex/zhmCJK/zhmCJK-test.tex
+    TEXMF/doc/latex/zhmCJK/zhmCJK.pdf
+    TEXMF/doc/latex/zhmCJK/README
+    TEXMF/fonts/map/fontname/zhmCJK.map
+    TEXMF/fonts/tfm/zhmCJK/zhmCJK.tfm
+    TEXMF/source/latex/zhmCJK/zhmCJK.dtx
+    TEXMF/source/latex/zhmCJK/zhmCJK.ins
+    TEXMF/source/latex/zhmCJK/zhmCJK.lua
+    TEXMF/tex/latex/zhmCJK/zhmCJK.sty
+
+  And merge the file texfonts.map.template into
+
+    TEXMF/fonts/map/fontname/texfonts.map
+
+  Or simply run script zhmCJK-addmap.pl to append this line to the old
+  texfonts.map:
+
+    include zhmCJK.map
+
+  Or, for MiKTeX only, instead of copying texfonts.map, zhmCJK.map and
+  zhmCJK.tfm, copy all miktex-tfm/zhm*/zhm**.tfm into:
+
+    TEXMF/fonts/tfm/zhmCJK/miktex-tfm/zhm*/zhm**.tfm
+
+* Run texhash to refresh file name data base.
+
+Basic Usage
+-----------
+
+zhmCJK provides similar syntax to xeCJK, while the underlying package is CJK
+under pdfTeX or DVIPDFMx engine.  A TeX source file is encoded in UTF-8 by
+default.
+
+The package provides the following commands to define a CJK font family:
+
+    \setCJKmainfont{ttf-file-name}[options]
+    \setCJKsansfont{ttf-file-name}[options]
+    \setCJKmonofont{ttf-file-name}[options]
+    \setCJKfamilyfont{family}{ttf-file-name}[options]
+
+For example, this setup some Chinese fonts on MS Windows:
+
+    \usepackage{zhmCJK}
+    \setCJKmainfont{simsun.ttc}[BoldFont=simhei.ttf, ItalicFont=simkai.ttf]
+
+You can read the PDF document (in Chinese) for more detailed explanations.
+
+Author
+------
+
+Leo Liu <leoliu.pku@gmail.com>
+
+If you are interested in the process of development you may observe
+
+    https://github.com/leo-liu/tex-pkg
+
+--- end of README ---
