@@ -3,7 +3,7 @@
 set timeout 30
 set host [lindex $argv 0]
 set username "root"
-set password "19981124jxrylhl"
+set password "xxxxxxx"
 
 spawn ssh $username@$host
 expect "*password*" {send "$password\r"}
