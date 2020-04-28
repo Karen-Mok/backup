@@ -1,0 +1,12 @@
+
+10.0.0.55/srun_portal_pc_yys.php?ac_id=8&
+
+x11vnc -forever -shared -rfbauth ~/.vnc/passwd
+
+ifconfig | grep 2001 | cut -d ' ' -f 10   #适用于提取deepin的IPv6地址
+
+filebrowser -a [`ifconfig | grep 2001 | cut -d ' ' -f 10`] -p 2333 -r /media/mogician/
+
+jupyter notebook --ip=`ifconfig | grep 2001 | cut -d ' ' -f 10`
+
+

@@ -1,0 +1,15 @@
+# 修改/etc/netplan/01-netcfg.yaml为以下内容,参见https://kb.justhost.ru/article/1474
+
+# This file describes the network interfaces available on your system
+# For more information, see netplan(5).
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens18:
+      addresses: [2.56.240.5/23,  "2a00:b700:2::a:18f/64"]
+      gateway4: 2.56.240.1
+      gateway6: 2a00:b700:2::1
+      nameservers:
+          search: [ kvm.u54990 ]
+          addresses:  [77.88.8.8,  "2a00:b700::220"]
