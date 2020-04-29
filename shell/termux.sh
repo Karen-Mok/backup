@@ -2,7 +2,7 @@
 
 pkg update
 pkg upgrade
-pkg install wget asciinema python nodejs git python3-pygments
+pkg install wget asciinema python nodejs git python3-pygments python3-pip
 // nodejs失败尝试:
 // curl -sL install-node.now.sh/lts | bash
 
