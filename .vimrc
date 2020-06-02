@@ -26,7 +26,7 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set cindent
-
+set wrap
 set showcmd
 
 let g:input_toggle = 1
