@@ -26,7 +26,12 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set cindent
-set wrap
+
+":set wrap "行内折行，默认启用;此时折行内换行用gj/gk
+"增加下面这两行，则在折行模式下j=gj,k=gk
+"map j gj
+"map k gk
+
 set showcmd
 
 let g:input_toggle = 1
