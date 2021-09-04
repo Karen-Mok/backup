@@ -9,6 +9,10 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:coc_disable_startup_warning = 1
+
+"install coc.nvim extensions
+let g:coc_global_extensions = ['coc-clangd','coc-go','coc-python','coc-sh','coc-sql','coc-json']
 
 call plug#end()
 
@@ -26,11 +30,6 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set cindent
-
-":set wrap "行内折行，默认启用;此时折行内换行用gj/gk
-"增加下面这两行，则在折行模式下j=gj,k=gk
-"map j gj
-"map k gk
 
 set showcmd
 
