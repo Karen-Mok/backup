@@ -24,4 +24,6 @@ else
     install_nodejs
 fi
 
-#vim -c 'CocInstall -sync coc-json coc-html|q'
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c 'PlugInstall|q'
