@@ -30,6 +30,8 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set cindent
+set cursorcolumn
+set cursorline
 
 set showcmd
 
