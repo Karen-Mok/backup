@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install -y wget curl git clangd vim-gtk3
+sudo apt install -y wget curl git clangd vim-gtk3 build-essential
 
 wget https://raw.githubusercontent.com/Karen-Mok/backup/master/.vimrc
 curl -o .vim/colors/monokai.vim --create-dirs https://raw.githubusercontent.com/Karen-Mok/backup/master/monokai.vim
