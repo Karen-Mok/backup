@@ -21,7 +21,7 @@ call plug#end()
 :set hlsearch
 :syntax enable
 :syntax on
-colorscheme monokai
+colorscheme monokai  "适合本地终端但gotty显示效果差使用web终端时需注释掉
 "colorscheme solarized
 set expandtab
 :%ret! 4
