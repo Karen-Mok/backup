@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'skywind3000/vim-dict'
+Plug 'skywind3000/vim-auto-popmenu'  "会被coc.nvim覆盖,需要:CocDisable使生效.配合vim-dict自动补全英语单词
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
@@ -64,3 +66,11 @@ let g:vimtex_view_method='zathura'
 " shows the errors and/or warnings when compile, and we can open the quickfix
 " windows use \le
 let g:vimtex_quickfix_mode=0
+
+"对于txt文件,禁用coc.nvim,启用vim-auto-popmenu.其他文件还是继续用coc.nvim补全
+autocmd BufNew,BufEnter *.txt execute "silent! CocDisable"
+autocmd BufLeave *.txt execute "silent! CocEnable"
+let g:apc_enable_ft = {'text':1}
+set cpt=.,k,w,b
+set completeopt=menu,menuone,noselect
+set shortmess+=c
