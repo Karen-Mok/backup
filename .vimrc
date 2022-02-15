@@ -14,7 +14,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:coc_disable_startup_warning = 1
 
 "install coc.nvim extensions
-let g:coc_global_extensions = ['coc-clangd','coc-go','coc-python','coc-sh','coc-sql','coc-json']
+let g:coc_global_extensions = ['coc-clangd','coc-go','coc-python','coc-sh','coc-sql','coc-json','coc-java']
 
 call plug#end()
 
